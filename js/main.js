@@ -3,20 +3,22 @@ function mean(arr){
     let sum = arr.reduce((a,c) => a + c, 0)
     return sum/total 
   }
+  function minMax(arr){
+    let sorted = arr.sort((a,b) => a -b)
+    return [sorted[0], sorted[sorted.length -1]]
+  }
   
-  //console.log(mean([14,45,59,12,34]))
   
   function median(arr){
     let sorted = arr.sort((a,b) => a -b)
     let n = sorted.length
     if(n % 2 === 0){
-      return ((n/2) + ((n/2) +1)) / 2
+      return (sorted[(n/2) -1] + sorted[(n/2)]) / 2
     } else{
-      return (n +1) /2
+      return sorted[((n +1) /2) - 1]
     }
   }
   
-  //console.log(median([12, 3, 4, 6, 89, 90]))
   
   function mode(arr){
     let maxCount = 0
