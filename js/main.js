@@ -1,10 +1,3 @@
-//value pulls 
-
-
-let modeValues = document.querySelector('#Mode').value
-let minMaxValues = document.querySelector('#Minmax').value
-let rangeValues = document.querySelector('#Range').value
-
 //event listeners 
 document.querySelector('#mean-button').addEventListener('click', meanPrint)
 document.querySelector('#median-button').addEventListener('click', medianPrint)

@@ -1,0 +1,88 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+@keyframes pulse{
+     25%  {transform: scale(0.9);}
+     75%  {transform: scale(1.1);}
+   }
+   @keyframes push{
+     50%  {transform: scale(0.8);}
+   }
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html{
+     font-family: 'Roboto Mono', monospace;
+    background-image: url('../images/fall.webp');
+}
+input{
+     border: 2px solid blue;
+     width: 75%;
+     height: 100%;
+     background-color:burlywood ;
+}
+button{
+     border: 2px solid rgb(0, 0, 0);
+     height: 5em;
+     background-color: rgba(248, 241, 17, 0.51);
+     color:rgba(251, 6, 6, 0.877);
+     box-shadow: 0 9px #999;
+}
+button:hover{ 
+     animation: pulse 0.5s ease-in infinite;
+   }
+   button:active{
+     animation: pulse 0.3s linear 1;
+   }
+/******************************************
+/* LAYOUT
+/*******************************************/
+header{
+     color: rgb(58, 13, 136);
+     font-size: 3em;
+     
+}
+.instructions{
+     display: flex;
+     flex-wrap: wrap;
+     text-decoration: underline;
+     text-decoration-color: rgb(207, 70, 36);
+     font-size: 1.6em;
+}
+.mean{
+     color: rgba(98, 90, 41, 0.459);
+}   
+.median{
+     color:rgb(211, 74, 19)
+}
+.mode{
+     color: rgb(84, 8, 27);
+}
+.minmax{
+     color:rgb(131, 9, 9)
+}
+.range{
+     color:rgb(57, 41, 41)
+}
+span{
+     font-size: 2em;
+     color: rgb(253, 78, 78);
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
