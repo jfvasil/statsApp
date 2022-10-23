@@ -43,9 +43,7 @@ button{
      color:rgba(251, 6, 6, 0.877);
      box-shadow: 0 9px #999;
 }
-button:hover{ 
-     animation: pulse 0.5s ease-in infinite;
-   }
+
    button:active{
      animation: pulse 0.3s linear 1;
    }
