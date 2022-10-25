@@ -4,6 +4,7 @@ document.querySelector('#median-button').addEventListener('click', medianPrint)
 document.querySelector('#mode-button').addEventListener('click', modePrint)
 document.querySelector('#minmax-button').addEventListener('click', minMaxPrint)
 document.querySelector('#range-button').addEventListener('click', rangePrint)
+document.querySelector('#deviation-button').addEventListener('click', deviationPrint)
 
 //event functions 
 function meanPrint(){
@@ -47,6 +48,13 @@ function rangePrint(){
         document.querySelector('#range-results').innerHTML = answer
         console.log(answer)
         }
+function deviationPrint(){
+  let deviationValues = document.querySelector('#Deviation').value
+        let arrString = deviationValues.split(' ')
+        let arr = arrString.map(x => Number(x))
+        let answer = deviation(arr)
+        document.querySelector('#deviation-results').innerHTML = answer
+}
                           
 
 //calc functions
@@ -98,4 +106,12 @@ function mean(arr){
         return Math.abs(sorted[0] - sorted[arr.length - 1])
       }
 
-      
+      function deviation(arr){
+        let mean = (arr.reduce((a,c) => a + c)) / (arr.length)
+        let mapped = arr.map(x => Math.pow((mean - x), 2))
+        let added = mapped.reduce((a, c) => a + c)
+        let close = added / (arr.length - 1)
+        let results = Math.sqrt(close)
+        return results.toFixed(2)
+        
+      }
